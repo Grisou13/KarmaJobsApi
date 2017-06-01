@@ -24,6 +24,7 @@ class CreateJobsTable extends Migration
             $table->string("reward")->nullable();
             $table->string("category");
             $table->string("location");
+            $table->string("geo_location")->nullable();
             $table->integer("note")->nullable();
 
 
