@@ -11,7 +11,7 @@ class Job extends Model
     public $guarded = ["id"];
   public static function boot()
   {
-    
+
     static::saving(function($job){
       if($job->location != null)
       {
@@ -21,7 +21,7 @@ class Job extends Model
   }
     public function getGeoLocationAttribute()
     {
-      return json_deecode($this->geo_location);
+      return json_decode($this->geo_location);
     }
     public function owner()
     {

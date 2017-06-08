@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 $api = app('Dingo\Api\Routing\Router');
-$api->group(["version"=>"v1",'middleware' => ['api.auth',"bindings"], 'providers' => 'jwt'], function ($api) {
+$api->group(["version"=>"v1",'middleware' => ["bindings"], 'providers' => 'jwt'], function ($api) {
   $api->resource('users', 'App\Http\Controllers\UserController', ["except"=>["store"]]);
   $api->resource('jobs', 'App\Http\Controllers\JobController');
   $api->get('/me', 'App\Http\Controllers\AuthController@me');
