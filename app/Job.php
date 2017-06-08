@@ -9,19 +9,24 @@ class Job extends Model
 {
     // public $fillable = ["*"];
     public $guarded = ["id"];
+    public $appends = ["geo_location"];
   public static function boot()
   {
 
     static::saving(function($job){
       if($job->location != null)
       {
-        $job->geo_location = json_encode(Geocoder::getCoordinatesForQuery($job->location));
+        $job->geo_location = Geocoder::getCoordinatesForQuery($job->location);
       }
     });
   }
-    public function getGeoLocationAttribute()
+    public function getGeoLocationAttribute($val)
     {
-      return json_decode($this->geo_location);
+      return json_decode($val,true);
+    }
+    public function setGeoLocationAttribute($val)
+    {
+      $this->attributes["geo_location"] = json_encode($val);
     }
     public function owner()
     {
