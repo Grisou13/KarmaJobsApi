@@ -39,6 +39,6 @@ class User extends Authenticatable
     }
     public function getNoteAttribute()
     {
-      return $this->attributes["note"] = $this->note;
+      return $this->attributes["note"] = $this->note();
     }
 }

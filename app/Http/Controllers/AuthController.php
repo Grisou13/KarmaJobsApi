@@ -52,7 +52,7 @@ class AuthController extends Controller
     public function me()
     {
 
-      $user = $this->auth->user();
+      $user = $this->auth()->user();
       return $user;
     }
 }
