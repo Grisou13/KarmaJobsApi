@@ -6,8 +6,11 @@ use Dingo\Api\Http\Request;
 use Tymon\JWTAuth\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use Dingo\Api\Routing\Helpers;
+
 class AuthController extends Controller
 {
+    use Helpers;
     protected $auth;
     public function __construct(JWTAuth $auth)
     {
