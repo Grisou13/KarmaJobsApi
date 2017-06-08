@@ -54,10 +54,10 @@ class DatabaseSeeder extends Seeder
         $j = Job::create([
           "title"=>"My awesome job {$i}",
           "start_at"=>Carbon::now("+".(5+$i)."h"),
-          "location"=>"Aenue des alpes 15\n 1450 Ste-Croix",
+          "location"=>"Avenue des alpes 15\n 1450 Ste-Croix",
           "reward"=>"COOOOKIES",
           "category"=>"house keeping",
-          "job_owner"=>rand(1,5)
+          "job_owner"=>rand(1,4)
         ]);
         if(rand(0,100) % 2){
           $j->end_at = Carbon::now("+1day");
