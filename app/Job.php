@@ -9,7 +9,7 @@ class Job extends Model
 {
     // public $fillable = ["*"];
     public $guarded = ["id"];
-    public $appends = ["geo_location"];
+    // public $appends = ["geo_location"];
   public static function boot()
   {
 
