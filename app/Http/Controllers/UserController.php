@@ -29,6 +29,7 @@ class UserController extends Controller
     {
         $user = new User;
         $user->fill($request->except(["_token","token"]));
+        
         $user->save();
         return $user;
     }

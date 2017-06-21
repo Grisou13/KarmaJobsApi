@@ -15,28 +15,28 @@ class DatabaseSeeder extends Seeder
     {
       User::create([
         "email"=>"user@karmajobs.com",
-        "password"=>bcrypt("password"),
+        "password"=>"password",
         "firstname"=>"USER",
         "lastname"=>"USER",
         "location"=>"Avenue de la gare 14\n1450 Ste-Croix"
       ]);
       User::create([
         "email"=>"another@karmajobs.com",
-        "password"=>bcrypt("password"),
+        "password"=>"password",
         "firstname"=>"USER",
         "lastname"=>"USER",
         "location"=>"Avenue de la gare 14\n1450 Ste-Croix"
       ]);
       User::create([
         "email"=>"yetagain@karmajobs.com",
-        "password"=>bcrypt("password"),
+        "password"=>"password",
         "firstname"=>"USER",
         "lastname"=>"USER",
         "location"=>"Avenue de la gare 14\n1450 Ste-Croix"
       ]);
       User::create([
         "email"=>"row@karmajobs.com",
-        "password"=>bcrypt("password"),
+        "password"=>"password",
         "firstname"=>"USER",
         "lastname"=>"USER",
         "location"=>"Avenue de la gare 14\n1450 Ste-Croix"
