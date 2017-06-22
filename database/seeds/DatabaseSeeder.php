@@ -49,17 +49,20 @@ class DatabaseSeeder extends Seeder
         "category"=>"house keeping",
         "job_owner"=>4
       ]);
-      collect(range(0,10))->each(function($i){
+      $titles = collect([
+        ["title"=>"Aide au jardinage"]
+      ]);
+      collect(range(0,20))->each(function($i){
 
         $j = Job::create([
           "title"=>"My awesome job {$i}",
           "start_at"=>Carbon::now("+".(5+$i)."h"),
-          "location"=>"Avenue des alpes 15\n 1450 Ste-Croix",
-          "reward"=>"COOOOKIES",
+          "location"=>"Avenue des alpes 1{$i}\n 1450 Ste-Croix",
+          "reward"=>"cookies",
           "category"=>"house keeping",
           "job_owner"=>rand(1,4)
         ]);
-        if(rand(0,100) % 2){
+        if(rand(0,100) % 2){ //might already be done
           $j->end_at = Carbon::now("+1day");
           $j->save();
         }
